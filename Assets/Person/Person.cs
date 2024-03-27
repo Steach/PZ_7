@@ -28,4 +28,9 @@ public class Person : MonoBehaviour
             }
         }
     }
+
+    protected virtual void ShowStat()
+    {
+        Debug.Log($"Name: {_name}\nHealth: {_health}");
+    }
 }
