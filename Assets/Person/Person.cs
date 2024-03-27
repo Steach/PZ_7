@@ -1,12 +1,12 @@
 using UnityEngine;
 
-public class Person : MonoBehaviour
+public abstract class Person : MonoBehaviour
 {
-    private string _name;
-    private int _health;
+    private string _name = "Arthur";
+    private int _health = 100;
 
     public string Name { get; }
-    public int Health 
+    public int Health
     {
         get 
         {
@@ -33,4 +33,6 @@ public class Person : MonoBehaviour
     {
         Debug.Log($"Name: {_name}\nHealth: {_health}");
     }
+
+    public abstract void TakeDamage(int damage);
 }
