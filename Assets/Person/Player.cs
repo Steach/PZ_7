@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Player : Person
 {
-    private float _experience;
     [SerializeField] private Person dragon;
     [SerializeField] private int damage;
+    private float _experience;
 
     public float Experience { get { return _experience; } set { _experience = value; } }
 

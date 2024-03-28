@@ -8,23 +8,22 @@ public abstract class Person : MonoBehaviour
     public string Name { get; }
     public int Health
     {
-        get 
-        {
-            return _health;
-        } 
+        get => _health;
         set 
         {
-            if (value < 0)
+            switch (value)
             {
-                Debug.Log($"Health can`t be lower than 0.");
-                value = 0;
-                _health = value;
-            }
-            else if (value > 100)
-            {
-                Debug.Log($"Health can`t be greater than 100.");
-                value = 100;
-                _health = value;
+                case < 0:
+                    Debug.Log($"Health can`t be lower than 0.");
+                    _health = 0; 
+                    break;
+                case > 100:
+                    Debug.Log($"Health can`t be greater than 100.");
+                    _health = 100;
+                    break;
+                default:
+                    _health = value; 
+                    break;
             }
         }
     }
