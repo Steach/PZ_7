@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class Player : Person
 {
-    [SerializeField] private Person dragon;
-    [SerializeField] private int damage;
+    [SerializeField] private int _damage;
+
+    public int Damage { get => _damage; }
+
     private float _experience;
 
     public float Experience { get { return _experience; } set { _experience = value; } }
@@ -12,7 +14,6 @@ public class Player : Person
     {
         Experience = 100;
         ShowStat();
-        dragon.TakeDamage(damage);
     }
 
     protected override void ShowStat()
