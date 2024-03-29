@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Dragon : Person
 {
-    [SerializeField] private int damage;
+    [SerializeField] private int _damage;
+    public int Damage { get => _damage; }
 
     public override void TakeDamage(int damageValue)
     {
