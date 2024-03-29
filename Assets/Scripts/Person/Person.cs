@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Person : MonoBehaviour
 {
+    [SerializeField] protected Slider _sliderHP;
+
     private string _name = "Arthur";
     private int _health = 100;
 
@@ -34,4 +37,9 @@ public abstract class Person : MonoBehaviour
     }
 
     public abstract void TakeDamage(int damage);
+
+    protected void HP()
+    {
+        _sliderHP.value = _health;
+    }
 }

@@ -6,14 +6,15 @@ TagManager:
   tags:
   - Enemy
   - Arrow
+  - FireBall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Arrow/Enemy
+  - Arrow/Player
   - Water
   - UI
-  - 
+  - FireBall/Enemy
   - 
   - 
   - 

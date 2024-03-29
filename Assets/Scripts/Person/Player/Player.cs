@@ -14,6 +14,12 @@ public class Player : Person
     {
         Experience = 100;
         ShowStat();
+        _sliderHP.maxValue = Health;
+    }
+
+    private void Update()
+    {
+        HP();
     }
 
     protected override void ShowStat()
