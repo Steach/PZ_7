@@ -20,6 +20,7 @@ public class Player : Person
     private void Update()
     {
         HP();
+        Death();
     }
 
     protected override void ShowStat()
@@ -32,5 +33,11 @@ public class Player : Person
     {
         Health -= damageValue;
         Debug.Log($"My name {Name}: After hitting with force: {damageValue}, I have: {Health} health.");
+    }
+
+    public override void Death()
+    {
+        if(Health <= 0)
+            Debug.Log("Player is Dead");
     }
 }

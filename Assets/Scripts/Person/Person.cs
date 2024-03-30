@@ -31,15 +31,11 @@ public abstract class Person : MonoBehaviour
         }
     }
 
-    protected virtual void ShowStat()
-    {
-        Debug.Log($"Name: {_name}\nHealth: {_health}");
-    }
+    protected virtual void ShowStat() => Debug.Log($"Name: {_name}\nHealth: {_health}");
 
     public abstract void TakeDamage(int damage);
 
-    protected void HP()
-    {
-        _sliderHP.value = _health;
-    }
+    public abstract void Death();
+
+    protected void HP() => _sliderHP.value = _health;
 }

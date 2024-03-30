@@ -4,11 +4,19 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _turnSpeed;
-    
+
+    [SerializeField] private GameObject _gameManagerGO;
+    private GameManager _gameManager;
+
+    private void Start()
+    {
+        _gameManager = _gameManagerGO.GetComponent<GameManager>();
+    }
 
     void Update()
     {
-        Move();
+        if (!GetGameOver())
+            Move();
     }
 
     private void Move()
@@ -53,5 +61,10 @@ public class Movement : MonoBehaviour
                 _moveSpeed = 1.0f;
                 break;
         }
+    }
+
+    private bool GetGameOver()
+    {
+        return _gameManager.GameOver;
     }
 }

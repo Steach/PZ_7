@@ -14,11 +14,21 @@ public class Dragon : Person
     private void Update()
     {
         HP();
+        Death();
     }
 
     public override void TakeDamage(int damageValue)
     {
         Health -= damageValue;
         Debug.Log($"I - the mughty dragon, have lost: {damageValue} hit point from a hunter shot.");
+    }
+
+    public override void Death()
+    {
+        if (Health <= 0)
+        {
+            Debug.Log("Dragon is dead!");
+            gameObject.SetActive(false);
+        }
     }
 }

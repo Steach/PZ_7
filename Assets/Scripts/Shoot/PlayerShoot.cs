@@ -2,9 +2,18 @@ using UnityEngine;
 
 public class PlayerShoot : ProjectileShoot
 {
+    [SerializeField] private GameObject _gameManagerGO;
+    private GameManager _gameManager;
+
+    private void Start()
+    {
+        _gameManager = _gameManagerGO.GetComponent<GameManager>();
+    }
+
     private void Update()
     {
-        Shoot();
+        if(!GetGameOver())
+            Shoot();
     }
 
     protected override void Shoot()
@@ -13,5 +22,10 @@ public class PlayerShoot : ProjectileShoot
         {
             Instantiate(_projectilePrefab, transform.position, transform.rotation);
         }
+    }
+
+    private bool GetGameOver()
+    {
+        return _gameManager.GameOver;
     }
 }
